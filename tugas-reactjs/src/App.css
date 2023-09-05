@@ -1,0 +1,16 @@
+.App{
+  border: 1px solid;
+  border-style: none;
+  border-radius: 10px;
+  margin: 100px 200px;
+  padding: 20px;
+  box-shadow: 1px 6px 32px 15px rgba(158,150,150,0.69);
+  -webkit-box-shadow: 1px 6px 32px 15px rgba(158,150,150,0.69);
+  -moz-box-shadow: 1px 6px 32px 15px rgba(158,150,150,0.69);
+}
+
+.header{
+  border-bottom: 2px solid;
+  padding-bottom: 20px;
+  border-color: darkgrey;
+}
