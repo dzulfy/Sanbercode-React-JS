@@ -1,10 +1,12 @@
 import './App.css';
+import Tugas6 from './tugas6/tugas6';
+import Tugas7 from './tugas7/tugas7';
 
 function App() {
   return (
-    <div className="App">
-      <h1 className="header">Hallo ,Saya Dzulfikar Fathin</h1>
-      <p>Saya dari Batch 49 sudah berhasil menginstall React</p>
+    <div>
+      <Tugas6 name="Dzulfikar Fathin"/>
+      <Tugas7 name="Dzulfikar Fathin" email="dzulfikarfathin09@gmail.com" batch="49"/> 
     </div>
   );
 }
