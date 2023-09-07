@@ -4,7 +4,7 @@ import { useState } from "react";
 const Tugas8 = () => {
     const [number, setNumber] = useState(0);
     const handleNumber = () => {
-        setNumber(number < 10 ? number + 1 : "State count sudah lebih dari 10!!", number == 0);
+        setNumber(number < 10 ? number + 1 : "State count sudah lebih dari 10!!");
     };
     return(
         <div className="App">
