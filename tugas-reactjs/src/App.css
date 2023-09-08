@@ -24,7 +24,7 @@
  width: 100%;
  height: 50px;
  border-radius: 8px;
- border-style: none;
+ border:1px solid
 }
 .Button:hover {
   background-color: rgb(70, 70, 70);
