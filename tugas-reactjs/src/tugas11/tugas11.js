@@ -5,6 +5,7 @@ import { Table } from "flowbite-react";
 const Tugas11 = () => {
     const [data, setData] = useState(null)
     const [fetchStatus , setFetchStatus] = useState(true)
+    const [currentId, setCurrentId] = useState(-1)
     useEffect ( () => {
         if (fetchStatus === true){
             axios.get("https://backendexample.sanbercloud.com/api/student-scores")
@@ -48,11 +49,20 @@ const Tugas11 = () => {
             course,
             score
         } = input
-        axios.post('https://backendexample.sanbercloud.com/api/student-scores', { name, course, score } )
+        if (currentId === -1){
+            axios.post('https://backendexample.sanbercloud.com/api/student-scores', { name, course, score } )
         .then((res) => {
             console.log(res)
             setFetchStatus(true)
         })
+        }else{
+            axios.put(`https://backendexample.sanbercloud.com/api/student-scores/${currentId}`, { name, course, score })
+            .then((res) => {
+                setFetchStatus(true)
+            })
+        }
+
+        setCurrentId(-1)
         setInput(
             {
                 name : "",
@@ -71,6 +81,24 @@ const Tugas11 = () => {
         .then((res) => {
             setFetchStatus(true)
         })
+    }
+    const handleEdit = (event) => {
+       let idData = parseInt(event.target.value)
+       setCurrentId(idData)
+       axios.get(`https://backendexample.sanbercloud.com/api/student-scores/${idData}`)
+       .then((res) => {
+        
+        let data = res.data
+
+        setInput(
+            {
+                name : data.name,
+                course : data.course,
+                score : data.score
+
+            }
+        )
+       })
     }
 
     return(
@@ -131,7 +159,8 @@ const Tugas11 = () => {
             {nilai}
             </Table.Cell>
             <Table.Cell className="text-center">
-            <button onClick={handleDelete} value={res.id} className=" bg-red-500 hover:bg-red-700 text-white rounded-md p-2">Delete</button>
+            <button onClick={handleEdit} value={res.id} className=" bg-green-400 hover:bg-green-600 text-white rounded-md p-2 mx-1">Edit</button>
+            <button onClick={handleDelete} value={res.id} className=" bg-red-500 hover:bg-red-700 text-white rounded-md p-2 mx-1">Delete</button>
             </Table.Cell>
           </Table.Row>
         </Table.Body>
