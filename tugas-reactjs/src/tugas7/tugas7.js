@@ -1,6 +1,6 @@
 import React from "react";
 
-const Datas = (props) => {
+const Tugas7 = (props) => {
     return (
         <div className="App">
             <h1 className="header">Data diri peserta kelas Reactjs</h1>
@@ -13,4 +13,4 @@ const Datas = (props) => {
     )
 }
 
-export default Datas;
+export default Tugas7;

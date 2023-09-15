@@ -1,6 +1,6 @@
 import React from "react";
 
-const Welcome = (props) => {
+const Tugas6 = (props) => {
     return (
         <div className="App">
             <h1 className="header">Hallo ,Saya {props.name}</h1>
@@ -9,4 +9,4 @@ const Welcome = (props) => {
     )
 }
 
-export default Welcome;
+export default Tugas6;
