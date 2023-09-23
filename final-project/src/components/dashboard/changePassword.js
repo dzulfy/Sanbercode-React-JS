@@ -11,6 +11,7 @@ const ChangePassword = () => {
     const [currentPassword, setCurrentPassword] = useState("");
     const [newPassword, setNewPassword] = useState("");
     const [confirmPassword, setConfirmPassword] = useState("");
+    const [showPassword, setShowPassword] = useState(false);
   
     const handleChangePassword = (e) => {
         e.preventDefault();
@@ -37,6 +38,9 @@ const ChangePassword = () => {
         .catch((error) => {
           alert("Terjadi kesalahan: " + error.message);
         });
+    };
+    const togglePasswordVisibility = () => {
+      setShowPassword(!showPassword);
     };
     return(
         <>
@@ -78,7 +82,7 @@ const ChangePassword = () => {
                   placeholder="Current Password"
                   required
                   name="currentPassword"
-                  type="password"
+                  type={showPassword ? "text" : "password"}
                   className="flex-grow w-full h-12 px-4 mb-2 transition duration-200 bg-white border border-gray-300 rounded shadow-sm appearance-none focus:border-deep-purple-accent-400 focus:outline-none focus:shadow-outline"
                 />
               </div>
@@ -93,7 +97,7 @@ const ChangePassword = () => {
                   onChange={(e) => setNewPassword(e.target.value)}
                   required
                   name="newPassword"
-                  type="password"
+                  type={showPassword ? "text" : "password"}
                   className="flex-grow w-full h-12 px-4 mb-2 transition duration-200 bg-white border border-gray-300 rounded shadow-sm appearance-none focus:border-deep-purple-accent-400 focus:outline-none focus:shadow-outline"
                   placeholder="New Password"
                 />
@@ -109,11 +113,22 @@ const ChangePassword = () => {
                   onChange={(e) => setConfirmPassword(e.target.value)}
                   required
                   name="confrimPassword"
-                  type="password"
+                  type={showPassword ? "text" : "password"}
                   className="flex-grow w-full h-12 px-4 mb-2 transition duration-200 bg-white border border-gray-300 rounded shadow-sm appearance-none focus:border-deep-purple-accent-400 focus:outline-none focus:shadow-outline"
                   placeholder="Confirm Password"
                 />
               </div>
+              <div className="mb-2 sm:mb-4">
+        <label className="inline-flex items-center cursor-pointer">
+          <input
+            type="checkbox"
+            className="form-checkbox h-5 w-5 text-deep-purple-accent-400 hover:cursor-pointer"
+            onChange={togglePasswordVisibility}
+            checked={showPassword}
+          />
+          <span className="ml-2 text-sm text-gray-600">Tampilkan Kata Sandi</span>
+        </label>
+      </div>
               <div className="mt-4 mb-2 sm:mb-4">
                 <button
                   type="submit"
