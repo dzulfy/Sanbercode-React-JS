@@ -213,7 +213,7 @@ const CreateData = () => {
     </div>
     <div>
       <label className="block mb-2 text-sm font-medium text-gray-900 ">Salary Max</label>
-      <input type="number" onChange={handleInput} value={input.salary_max} name="salary_max" className=" border  text-sm rounded-lg  block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500" placeholder="Salary Max"  required />
+      <input type="number" onChange={handleInput} value={input.salary_max} name="salary_max" className=" border  text-sm rounded-lg  block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500" placeholder="Salary Max"  />
     </div>  
   </div>
   

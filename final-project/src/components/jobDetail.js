@@ -37,26 +37,15 @@ const JobDetail = () => {
     return text;
     }
 
-    function formatRupiah(angka, prefix = 'Rp. ') {
-      if (typeof angka !== 'string') {
-        angka = angka.toString();
-      } 
-    
-      var number_string = angka.replace(/[^,\d]/g, ''),
-        split = number_string.split(','),
-        sisa = split[0].length % 3,
-        rupiah = split[0].substr(0, sisa),
-        ribuan = split[0].substr(sisa).match(/\d{3}/g),
-        separator = '';
-    
-      if (ribuan) {
-        separator = sisa ? '.' : '';
-        rupiah += separator + ribuan.join('.');
-      }
-    
-      rupiah = split[1] !== undefined ? rupiah + ',' + split[1] : rupiah;
-      return prefix + rupiah;
-    }
+    const formatRupiah = (angka) => {
+      const formattedRupiah = new Intl.NumberFormat('id-ID', {
+        style: 'currency',
+        currency: 'IDR',
+        minimumFractionDigits: 0, 
+      }).format(angka);
+  
+      return formattedRupiah;
+    };
 
 
   if (!job) {

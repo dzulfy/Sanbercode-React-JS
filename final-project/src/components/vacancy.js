@@ -79,26 +79,16 @@ const Vacancy = () => {
     return <LoadingPage/> 
   }
 
-  function formatRupiah(angka, prefix = 'Rp. ') {
-    if (typeof angka !== 'string') {
-      angka = angka.toString();
-    } 
+  const formatRupiah = (angka) => {
+    const formattedRupiah = new Intl.NumberFormat('id-ID', {
+      style: 'currency',
+      currency: 'IDR',
+      minimumFractionDigits: 0, 
+    }).format(angka);
+
+    return formattedRupiah;
+  };
   
-    var number_string = angka.replace(/[^,\d]/g, ''),
-      split = number_string.split(','),
-      sisa = split[0].length % 3,
-      rupiah = split[0].substr(0, sisa),
-      ribuan = split[0].substr(sisa).match(/\d{3}/g),
-      separator = '';
-  
-    if (ribuan) {
-      separator = sisa ? '.' : '';
-      rupiah += separator + ribuan.join('.');
-    }
-  
-    rupiah = split[1] !== undefined ? rupiah + ',' + split[1] : rupiah;
-    return prefix + rupiah;
-  }
 
   function truncateText(text, maxLength) {
     if (text.length > maxLength) {
@@ -269,7 +259,9 @@ const Vacancy = () => {
                        {truncateText(res.job_qualification,50)}
                     </p>
                     <h1 className="text-white font-bold text-xl">
-                        {formatRupiah(res.salary_min)} s.d {formatRupiah(res.salary_max)}
+                    {res.salary_min || res.salary_max
+                      ? `${formatRupiah(res.salary_min)} s.d ${formatRupiah(res.salary_max)}`
+                      : 'Rp. 0'}
                     </h1><br></br>
                     <Link to={`/vacancy/job/${res.id}`} >
                     <button className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white  rounded-lg  focus:ring-4 focus:outline-none  bg-blue-600 hover:bg-blue-700 focus:ring-blue-800">
