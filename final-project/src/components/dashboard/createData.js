@@ -177,19 +177,19 @@ const CreateData = () => {
   <div className="grid gap-6 mb-6 md:grid-cols-2">
     <div>
       <label className="block mb-2 text-sm font-medium text-gray-900 ">Title</label>
-      <input type="text" onChange={handleInput} value={input.title} name="title" className=" border text-sm rounded-lg block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500" placeholder="Title" required />
+      <input type="text" onChange={handleInput} value={input.title} name="title" className=" border text-sm rounded-lg block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500" placeholder="Front end.." required />
     </div>
     <div>
       <label className="block mb-2 text-sm font-medium text-gray-900 ">Company Name</label>
-      <input type="text" onChange={handleInput} value={input.company_name} name="company_name" className=" border  text-sm rounded-lg  block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500" placeholder="Company Name"  required />
+      <input type="text" onChange={handleInput} value={input.company_name} name="company_name" className=" border  text-sm rounded-lg  block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500" placeholder="PT..."  required />
     </div>
     <div>
       <label className="block mb-2 text-sm font-medium text-gray-900 ">Job Type</label>
-      <input type="text" onChange={handleInput} value={input.job_type} name="job_type" className=" border  text-sm rounded-lg  block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500" placeholder="Job Type"  required />
+      <input type="text" onChange={handleInput} value={input.job_type} name="job_type" className=" border  text-sm rounded-lg  block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500" placeholder="remote..."  required />
     </div>  
     <div>
       <label className="block mb-2 text-sm font-medium text-gray-900 ">Company City</label>
-      <input type="text" onChange={handleInput} value={input.company_city} name="company_city" className=" border  text-sm rounded-lg  block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500" placeholder="Company City"  required />
+      <input type="text" onChange={handleInput} value={input.company_city} name="company_city" className=" border  text-sm rounded-lg  block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500" placeholder="new york"  required />
     </div>
     <div>
       <label className="block mb-2 text-sm font-medium text-gray-900 ">Job Qualification</label>
@@ -197,23 +197,23 @@ const CreateData = () => {
     </div>
     <div>
       <label className="block mb-2 text-sm font-medium text-gray-900">Company Image URL</label>
-      <input type="text" onChange={handleInput} value={input.company_image_url} name="company_image_url" className=" border text-sm rounded-lg  block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500" placeholder="Company Image URL" required />
+      <input type="text" onChange={handleInput} value={input.company_image_url} name="company_image_url" className=" border text-sm rounded-lg  block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500" placeholder="url" required />
     </div>
     <div>
       <label className="block mb-2 text-sm font-medium text-gray-900 ">Job Tenure</label>
-      <input type="text" onChange={handleInput} value={input.job_tenure} name="job_tenure" className=" border  text-sm rounded-lg  block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500" placeholder="Job Tenure" required />
+      <input type="text" onChange={handleInput} value={input.job_tenure} name="job_tenure" className=" border  text-sm rounded-lg  block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500" placeholder="Kontrak" required />
     </div>
     <div>
       <label className="block mb-2 text-sm font-medium text-gray-900 ">Salary Min</label>
-      <input type="number" onChange={handleInput} value={input.salary_min} name="salary_min" className=" border text-sm rounded-lg  block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500" placeholder="Salary Min" required />
+      <input type="number" onChange={handleInput} value={input.salary_min} name="salary_min" className=" border text-sm rounded-lg  block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500" placeholder="500000" required />
     </div>
     <div>
       <label className="block mb-2 text-sm font-medium text-gray-900 ">Job Status</label>
-      <input type="number" onChange={handleInput} value={input.job_status} name="job_status" className=" border  text-sm rounded-lg  block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500" placeholder="Job Status" required />
+      <input type="number" onChange={handleInput} value={input.job_status} name="job_status" className=" border  text-sm rounded-lg  block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500" placeholder="1 for active 0 for off" required />
     </div>
     <div>
       <label className="block mb-2 text-sm font-medium text-gray-900 ">Salary Max</label>
-      <input type="number" onChange={handleInput} value={input.salary_max} name="salary_max" className=" border  text-sm rounded-lg  block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500" placeholder="Salary Max"  />
+      <input type="number" onChange={handleInput} value={input.salary_max} name="salary_max" className=" border  text-sm rounded-lg  block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500" placeholder="90000000"  />
     </div>  
   </div>
   
